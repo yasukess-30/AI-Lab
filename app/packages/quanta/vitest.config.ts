@@ -24,6 +24,9 @@ export default defineConfig({
         },
       },
       {
+        resolve: {
+          alias: [{ find: /^@higgsfield-ai\\/icons(\\/.*)?$/, replacement: QUANTA_ICONS_SHIM }],
+        },
         test: {
           name: 'components',
           environment: 'happy-dom',
