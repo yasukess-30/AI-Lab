@@ -11,7 +11,7 @@ for (const [lessonId, lab] of labEntries) {
     continue;
   }
 
-  const rows = lab.datasetCsv.trim().split(/\\r?\\n/);
+  const rows = lab.datasetCsv.trim().split(/\r?\n/);
   if (rows.length < 2 || !rows[0].includes(",")) {
     errors.push(`${lessonId}: CSV sem cabeçalho ou sem linhas de dados`);
   }
@@ -30,7 +30,7 @@ const uncovered = [...lessonIds].filter((id) => !Object.hasOwn(lessonLabs, id));
 console.log(`Laboratórios validados: ${labEntries.length}`);
 console.log(`Aulas sem laboratório interativo nesta etapa: ${uncovered.length}`);
 if (errors.length) {
-  console.error(errors.join("\\n"));
+  console.error(errors.join("\n"));
   throw new Error(`Falha na validação de ${errors.length} item(ns).`);
 }
 console.log("Todos os exemplos JavaScript executaram e produziram saída.");
