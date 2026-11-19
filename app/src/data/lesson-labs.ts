@@ -108,8 +108,8 @@ export const lessonLabs: Record<string, LessonLab> = {
     "challenge": "Adicione um item sem cliente. Depois simule uma falha entre gravar a ordem e enviar uma notificação. Como evitar perder ou duplicar o evento?",
     "hint": "Em sistemas reais, use chave idempotente persistida no banco, transações ou padrão outbox, logs e autorização para ações externas."
   },
-  "engenharia": {
-    "title": "Cálculo de tensão axial e verificação de unidade",
+  "cad-cae": {
+    "title": "Verificação analítica antes da simulação CAE",
     "level": "Iniciante",
     "minutes": 25,
     "goal": "Aplicar uma equação de engenharia simples e validar unidades antes de pensar em um modelo de IA.",
@@ -120,7 +120,7 @@ export const lessonLabs: Record<string, LessonLab> = {
     "challenge": "Converta a área para m² e calcule o resultado em Pa. Compare os valores e explique por que misturar mm² e m² sem conversão gera erro de um milhão.",
     "hint": "Antes de usar ML em engenharia, crie uma referência física verificável, confira unidade e hipóteses."
   },
-  "negocios": {
+  "precificacao": {
     "title": "Calculadora de custo, preço e margem de um serviço",
     "level": "Iniciante",
     "minutes": 20,
@@ -144,8 +144,8 @@ export const lessonLabs: Record<string, LessonLab> = {
     "challenge": "Misture as condições e calcule uma média única. Explique por que isso pode esconder tendências. Quais outros metadados seriam necessários?",
     "hint": "Registre configuração, potência, altitude, temperatura ambiente, bleed, instrumento, revisão do método e demais condições aplicáveis."
   },
-  "visao-defeitos": {
-    "title": "Projeto progressivo: avaliação de detector de defeitos",
+  "inspecao-aero": {
+    "title": "Projeto progressivo: avaliação de detector visual em inspeção",
     "level": "Avançado",
     "minutes": 40,
     "goal": "Criar uma matriz de confusão e definir uma política de encaminhamento para casos incertos.",
