@@ -220,7 +220,7 @@ function AILab() {
               <div className="hero-copy">
                 <div className="eyebrow"><span className="eyebrow-line" /> CENTRO DE APRENDIZAGEM</div>
                 <h1>Entenda a IA.<br /><em>Aplique na prática.</em></h1>
-                <p>Uma formação prática em inteligência artificial, conectada à engenharia mecânica, manutenção e produção.</p>
+                <p>Uma formação técnica multidisciplinar para entender como a IA funciona, construir soluções e aplicá-las em ciência, saúde, indústria, agricultura, negócios, educação, arte e muito mais.</p>
                 <div className="hero-actions"><button className="primary-action" onClick={() => openLesson(nextLesson.id)}>Continuar estudando <span>↗</span></button><button className="text-action" onClick={() => setTab("tracks")}>Ver currículo <span>→</span></button></div>
                 <div className="hero-meta"><span><b>08</b> TRILHAS</span><span><b>{totalLessons}</b> AULAS</span><span><b>30-60</b> MIN / DIA</span></div>
               </div>
