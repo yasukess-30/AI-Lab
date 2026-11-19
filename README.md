@@ -4,7 +4,7 @@
 
 O AI LAB é uma academia independente e multidisciplinar de Inteligência Artificial. Seu propósito é ensinar desde os fundamentos matemáticos e computacionais até a pesquisa, implementação, avaliação e operação responsável de sistemas de IA. A formação conecta conceitos a problemas reais em saúde, ciência, agricultura, meio ambiente, engenharia, indústria, finanças, direito, educação, arte, robótica, transporte e outras áreas. O foco é profundidade técnica com clareza didática: fundamentos antes das ferramentas, evidência antes de afirmações e projetos avaliados por critérios explícitos.
 
-Este repositório contém o código-fonte da aplicação e os arquivos necessários para seu desenvolvimento e implantação.
+Este repositório contém o código-fonte da aplicação e os arquivos necessários para seu desenvolvimento e implantação. A aplicação também inclui laboratórios JavaScript executáveis no navegador, com datasets sintéticos para download e desafios progressivos.
 
 ---
 
