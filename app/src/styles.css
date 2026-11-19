@@ -476,3 +476,34 @@ a { color: inherit; }
 .guide-references h3{flex-basis:100%}
 .guide-references a{font-size:12px;color:#496b50;text-decoration:none;border:1px solid var(--line,#e5e7e2);border-radius:999px;padding:8px 12px}
 .guide-references a:hover{text-decoration:underline}
+
+
+/* Interactive, browser-isolated learning labs */
+.runnable-lab{margin:28px 0;padding:clamp(17px,3vw,27px);border:1px solid #cfd8ce;border-radius:18px;background:#eef2ec}
+.runnable-lab-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;padding-bottom:19px;border-bottom:1px solid #d6ded4}
+.runnable-lab-head h3{margin:8px 0;font-size:clamp(20px,2.5vw,27px);letter-spacing:-.04em}
+.runnable-lab-head p{max-width:700px;margin:0;color:#647168;font-size:13px;line-height:1.7}
+.runnable-lab-meta{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.runnable-lab-meta span{padding:7px 9px;border:1px solid #d2dbd0;border-radius:999px;color:#66746a;font:9px var(--mono);white-space:nowrap}
+.runnable-lab-resources{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:16px 0;padding:14px 15px;border:1px solid #dce3da;border-radius:10px;background:#f8faf6}
+.runnable-lab-resources div{display:grid;gap:4px}
+.runnable-lab-resources div>span,.lab-learning-grid span{font:8px var(--mono);letter-spacing:.1em;color:#8a958d}
+.runnable-lab-resources strong{font-size:12px}
+.runnable-lab-resources p{margin:0;color:#7b877f;font-size:10px}
+.lab-secondary-action{border:1px solid #cbd5ca;border-radius:6px;background:#fbfcfa;padding:9px 12px;color:#536257;font-size:10px;cursor:pointer;white-space:nowrap}
+.lab-secondary-action:hover{border-color:#8da18d;background:#f2f6f0}
+.lab-editor-label{display:block;margin:18px 0 8px;color:#78867b;font:8px var(--mono);letter-spacing:.1em}
+.lab-code-editor{display:block;width:100%;min-height:300px;resize:vertical;border:1px solid #26352b;border-radius:10px;background:#17221b;color:#e4eee5;padding:17px;font:11px/1.7 var(--mono);tab-size:2;white-space:pre;overflow:auto}
+.lab-code-editor:focus{outline:2px solid #9bad9b;outline-offset:2px}
+.lab-run-toolbar{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 14px}
+.lab-run-toolbar .primary-action{min-height:38px;font-size:10px}
+.lab-output-frame{display:block;width:100%;min-height:220px;border:1px solid #26352b;border-radius:10px;background:#17221b}
+.lab-output-placeholder{min-height:100px;display:grid;place-items:center;padding:20px;border:1px dashed #b9c7b8;border-radius:10px;color:#7a887c;text-align:center;font-size:11px;line-height:1.7}
+.lab-learning-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
+.lab-learning-grid>div{padding:14px;border:1px solid #d8e0d5;border-radius:9px;background:#f8faf6}
+.lab-learning-grid p{margin:8px 0 0;color:#637168;font-size:11px;line-height:1.7}
+.lab-hint{margin-top:12px;padding:12px 14px;border:1px solid #d8e0d5;border-radius:8px;background:#f8faf6}
+.lab-hint summary{color:#526a56;font-size:11px;font-weight:600;cursor:pointer}
+.lab-hint p{margin:9px 0 0;color:#68766c;font-size:11px;line-height:1.7}
+.lab-safety-note{margin:14px 0 0;color:#8b746d;font-size:9px;line-height:1.6}
+@media(max-width:620px){.runnable-lab-head{display:block}.runnable-lab-meta{justify-content:flex-start;margin-top:12px}.runnable-lab-resources{align-items:flex-start;flex-direction:column}.lab-code-editor{min-height:360px;font-size:10px}.lab-learning-grid{grid-template-columns:1fr}.lab-run-toolbar{display:grid;grid-template-columns:1fr 1fr}.lab-run-toolbar .primary-action{grid-column:1/-1}.lab-output-frame{min-height:250px}}
