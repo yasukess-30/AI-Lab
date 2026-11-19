@@ -47,8 +47,9 @@ function buildSandboxDocument(code: string): string {
 export function RunnableLab({ lab }: { lab: LessonLab }) {
   const [code, setCode] = useState(lab.code);
   const [runId, setRunId] = useState(0);
+  const [executedCode, setExecutedCode] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
-  const documentHtml = useMemo(() => runId ? buildSandboxDocument(code) : "", [code, runId]);
+  const documentHtml = useMemo(() => executedCode !== null ? buildSandboxDocument(executedCode) : "", [executedCode]);
 
   function downloadDataset() {
     const blob = new Blob([lab.datasetCsv + "\\n"], { type: "text/csv;charset=utf-8" });
@@ -57,7 +58,7 @@ export function RunnableLab({ lab }: { lab: LessonLab }) {
     anchor.href = url;
     anchor.download = lab.datasetName;
     anchor.click();
-    URL.revokeObjectURL(url);
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
   async function copyCode() {
@@ -97,7 +98,7 @@ export function RunnableLab({ lab }: { lab: LessonLab }) {
         onChange={(event) => setCode(event.target.value)}
       />
       <div className="lab-run-toolbar">
-        <button type="button" className="primary-action" onClick={() => setRunId((value) => value + 1)}>Executar código <span>▶</span></button>
+        <button type="button" className="primary-action" onClick={() => { setExecutedCode(code); setRunId((value) => value + 1); }}>Executar código <span>▶</span></button>
         <button type="button" className="lab-secondary-action" onClick={() => setCode(lab.code)}>Restaurar exemplo</button>
         <button type="button" className="lab-secondary-action" onClick={copyCode}>{copied ? "Copiado ✓" : "Copiar código"}</button>
       </div>
