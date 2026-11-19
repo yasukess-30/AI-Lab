@@ -1,0 +1,24 @@
+export type LearningResource = { title:string; institution:string; kind:string; url:string; topics:string; };
+export const learningResources: LearningResource[] = [
+ {title:"Machine Learning Crash Course",institution:"Google for Developers",kind:"Curso interativo",url:"https://developers.google.com/machine-learning/crash-course",topics:"Fundamentos, regressão, classificação, redes neurais, embeddings e produção"},
+ {title:"CS229: Machine Learning",institution:"Stanford University",kind:"Disciplina universitária",url:"https://cs229.stanford.edu/",topics:"Fundamentos matemáticos, aprendizado supervisionado e não supervisionado, teoria e projetos"},
+ {title:"Deep Learning",institution:"MIT OpenCourseWare",kind:"Curso universitário",url:"https://ocw.mit.edu/courses/6-s191-introduction-to-deep-learning/",topics:"Redes neurais, otimização, arquiteturas profundas e aplicações"},
+ {title:"Universal AI Curriculum",institution:"MIT Open Learning",kind:"Currículo multidisciplinar",url:"https://openlearning.mit.edu/",topics:"Fundamentos, LLMs, IA multimodal, saúde, transporte, sustentabilidade e empreendedorismo"},
+ {title:"AI Research Foundations",institution:"UCL e Google DeepMind",kind:"Formação em pesquisa",url:"https://www.ucl.ac.uk/ai-research-foundations/",topics:"Fundamentos de pesquisa, modelos generativos e treinamento de LLMs"},
+ {title:"Transformers documentation",institution:"Hugging Face",kind:"Documentação oficial",url:"https://huggingface.co/docs/transformers",topics:"Modelos de texto, visão, áudio, multimodais, inferência e fine-tuning"},
+ {title:"Datasets documentation",institution:"Hugging Face",kind:"Documentação oficial",url:"https://huggingface.co/docs/datasets",topics:"Carregamento, preparação, transformação e versionamento de conjuntos de dados"},
+ {title:"PyTorch Tutorials",institution:"PyTorch",kind:"Tutoriais oficiais",url:"https://pytorch.org/tutorials/",topics:"Tensores, autograd, redes neurais, treinamento e implantação"},
+ {title:"scikit-learn User Guide",institution:"scikit-learn",kind:"Documentação oficial",url:"https://scikit-learn.org/stable/user_guide.html",topics:"Pré-processamento, modelos clássicos, validação cruzada e métricas"},
+ {title:"OpenCV Tutorials",institution:"OpenCV",kind:"Documentação e tutoriais",url:"https://docs.opencv.org/",topics:"Processamento de imagem, vídeo, calibração e visão computacional"},
+ {title:"ROS 2 Documentation",institution:"Open Robotics",kind:"Documentação oficial",url:"https://docs.ros.org/",topics:"Robótica, nós, tópicos, serviços, sensores e sistemas distribuídos"},
+ {title:"Reinforcement Learning: An Introduction",institution:"Richard S. Sutton e Andrew G. Barto",kind:"Livro aberto",url:"http://incompleteideas.net/book/the-book-2nd.html",topics:"Processos de decisão de Markov, valor, políticas e aprendizado por reforço"},
+ {title:"AI Index Report",institution:"Stanford HAI",kind:"Relatório de pesquisa",url:"https://hai.stanford.edu/ai-index",topics:"Evidências sobre pesquisa, desempenho, economia, medicina, educação e governança"},
+ {title:"AI applications in society",institution:"OECD",kind:"Relatório institucional",url:"https://oecd.ai/en/how-we-use-ai",topics:"Aplicações e desafios em transporte, agricultura, finanças, ciência, saúde e setor público"},
+ {title:"AI competency framework for students",institution:"UNESCO",kind:"Referencial educacional",url:"https://www.unesco.org/en/articles/unesco-ai-competency-framework-students",topics:"Mentalidade centrada no ser humano, ética, técnicas, aplicações e criação de sistemas"},
+ {title:"AI Risk Management Framework",institution:"NIST",kind:"Referencial técnico",url:"https://www.nist.gov/itl/ai-risk-management-framework",topics:"Governança, mapeamento, medição e gestão de riscos de IA"},
+ {title:"OWASP Top 10 for LLM Applications",institution:"OWASP",kind:"Referencial de segurança",url:"https://genai.owasp.org/llm-top-10/",topics:"Prompt injection, vazamento de dados, cadeia de suprimentos e riscos de aplicações LLM"},
+ {title:"Earth Engine Guides",institution:"Google",kind:"Documentação técnica",url:"https://developers.google.com/earth-engine/guides",topics:"Sensoriamento remoto, imagens de satélite e análise geoespacial"},
+ {title:"NASA Open Science Data",institution:"NASA",kind:"Dados científicos",url:"https://data.nasa.gov/",topics:"Dados de ciência espacial, observação da Terra e exploração"},
+ {title:"PhysioNet",institution:"PhysioNet",kind:"Repositório de dados",url:"https://physionet.org/",topics:"Sinais fisiológicos e conjuntos de dados biomédicos para pesquisa"},
+ {title:"FAO Digital Agriculture",institution:"FAO",kind:"Pesquisa e referência",url:"https://www.fao.org/digital-agriculture/en/",topics:"Agricultura digital, dados, serviços e transformação agroalimentar"}
+];
