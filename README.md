@@ -2,7 +2,7 @@
 
 **Uma academia de estudos e experimentação em Inteligência Artificial.**
 
-O AI LAB é um projeto educacional desenvolvido para organizar o aprendizado em Inteligência Artificial de forma progressiva, prática e acessível. A proposta é reunir conteúdos, trilhas de estudo e atividades em um ambiente próprio, permitindo que o conhecimento seja construído desde os fundamentos até aplicações mais avançadas.
+O AI LAB é uma academia independente e multidisciplinar de Inteligência Artificial. Seu propósito é ensinar desde os fundamentos matemáticos e computacionais até a pesquisa, implementação, avaliação e operação responsável de sistemas de IA. A formação conecta conceitos a problemas reais em saúde, ciência, agricultura, meio ambiente, engenharia, indústria, finanças, direito, educação, arte, robótica, transporte e outras áreas. O foco é profundidade técnica com clareza didática: fundamentos antes das ferramentas, evidência antes de afirmações e projetos avaliados por critérios explícitos.
 
 Este repositório contém o código-fonte da aplicação e os arquivos necessários para seu desenvolvimento e implantação.
 
@@ -12,7 +12,10 @@ Este repositório contém o código-fonte da aplicação e os arquivos necessár
 
 - Estruturar uma jornada de aprendizagem em Inteligência Artificial.
 - Apresentar conceitos técnicos de maneira gradual e compreensível.
-- Conectar fundamentos teóricos a exemplos e atividades práticas.
+- Conectar fundamentos teóricos a exemplos, laboratórios e projetos avaliados.
+- Explorar aplicações multidisciplinares em setores científicos, sociais e produtivos.
+- Priorizar documentação oficial, pesquisa acadêmica e fontes primárias.
+- Ensinar limitações, avaliação, segurança, ética e governança junto às técnicas.
 - Manter um ambiente de estudos organizado e evolutivo.
 - Experimentar ferramentas e tecnologias utilizadas no desenvolvimento de aplicações modernas.
 
@@ -157,3 +160,27 @@ Nenhuma licença de distribuição foi declarada neste repositório até o momen
 
 **AI LAB**  
 *Aprender. Experimentar. Construir.*
+
+
+## Princípios pedagógicos
+
+1. **Progressão desde o zero:** termos técnicos são definidos antes de serem usados e cada assunto constrói sobre conhecimentos anteriores.
+2. **Profundidade técnica:** explicar mecanismos, matemática, arquitetura, hipóteses e limites, não apenas apresentar ferramentas.
+3. **Aprendizagem aplicada:** cada tema deve conectar teoria, exemplos, laboratório, análise de erros e projeto.
+4. **Evidência e rastreabilidade:** priorizar universidades, artigos, documentação oficial, normas e conjuntos de dados com procedência conhecida.
+5. **Avaliação real:** medir resultados com métricas adequadas, conjuntos de teste independentes e análise de falhas.
+6. **Responsabilidade:** discutir privacidade, segurança, viés, direitos autorais e supervisão humana de acordo com o risco.
+
+## Conteúdo educacional atual
+
+- app/src/data/curriculum.ts: trilhas, aulas, projetos, avaliações, flashcards e glossário.
+- app/src/data/lesson-depth.ts: explicações adicionais, estudos de caso, erros comuns e vocabulário.
+- app/src/data/lesson-guides.ts: cadernos aprofundados com fundamentos, equações, laboratórios, exercícios e referências para aulas centrais.
+- app/src/data/application-domains.ts: catálogo multidisciplinar de áreas de aplicação e projetos.
+- app/src/data/learning-resources.ts: biblioteca de referências técnicas e científicas.
+
+## Limitações conhecidas
+
+- O progresso de estudo permanece salvo localmente no navegador; contas e sincronização entre dispositivos ainda exigem implementação de autenticação e banco de dados.
+- Materiais de aplicação são educacionais e não substituem profissionais, normas, protocolos ou validações regulatórias em domínios críticos.
+- A publicação em Cloudflare depende da configuração de Workers Builds vinculada ao repositório.
