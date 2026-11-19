@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config'
 import { fileURLToPath } from 'node:url'
 
-const QUANTA_ICONS_SHIM = fileURLToPath(new URL('../../src/lib/quanta-material-icons.ts', import.meta.url))
+const QUANTA_ICONS_SHIM = fileURLToPath(new URL('./src/test/quanta-icons.test.tsx', import.meta.url))
 const QUANTA_ICONS_PATTERN = new RegExp('^@higgsfield-ai/icons(/.*)?$')
 
 export default defineConfig({

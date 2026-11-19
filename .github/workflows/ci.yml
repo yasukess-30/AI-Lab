@@ -1,7 +1,11 @@
-name: Template CI
+name: AI LAB — Validação contínua
 
 on:
   push:
+    branches:
+      - main
+      - 'etapa-*'
+  pull_request:
     branches:
       - main
   workflow_dispatch:
@@ -10,7 +14,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    name: Validate AI LAB
+    name: Typecheck, build e testes de pacotes
     # The app project lives in app/ (ci/ holds the deploy config, AGENTS.md +
     # skills/ stay at root). Every build step runs there.
     defaults:
