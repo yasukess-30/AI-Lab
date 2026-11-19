@@ -269,7 +269,7 @@ function AILab() {
 
         {tab === "tracks" && (
           <section className="page-content">
-            <PageIntro eyebrow="FORMAÇÃO PROGRESSIVA" title="Currículo de IA" description="Uma trilha do entendimento dos modelos até aplicações reais em engenharia, manutenção e produção." />
+            <PageIntro eyebrow="FORMAÇÃO PROGRESSIVA" title="Currículo de IA" description="Uma formação progressiva: dos fundamentos matemáticos e computacionais à pesquisa, construção, avaliação e aplicação profissional de sistemas de IA em diferentes setores." />
             {activeLesson ? (
               <div className="lesson-layout">
                 <aside className="lesson-sidebar"><button className="back-link" onClick={() => setActiveLessonId(null)}>← Todas as trilhas</button><div className="lesson-side-title">{activeModule?.title}</div>{activeModule?.lessons.map((lesson, index) => <button key={lesson.id} className={`lesson-side-item ${activeLesson.id === lesson.id ? "selected" : ""}`} onClick={() => setActiveLessonId(lesson.id)}><span>{progress.completedLessonIds.includes(lesson.id) ? "✓" : String(index + 1).padStart(2, "0")}</span>{lesson.title}</button>)}</aside>
