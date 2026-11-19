@@ -7,7 +7,7 @@ function buildSandboxDocument(code: string): string {
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src data:; font-src 'none'; form-action 'none'; base-uri 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src data:; font-src 'none'; form-action 'none'; base-uri 'none'; navigate-to 'none';">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   body{margin:0;padding:14px;background:#17221b;color:#e4eee5;font:12px/1.6 ui-monospace,monospace}
@@ -113,7 +113,7 @@ export function RunnableLab({ lab }: { lab: LessonLab }) {
         <div><span>DESAFIO DE EXTENSÃO</span><p>{lab.challenge}</p></div>
       </div>
       <details className="lab-hint"><summary>Ver pista conceitual</summary><p>{lab.hint}</p></details>
-      <p className="lab-safety-note">Ambiente didático local: não cole senhas, dados pessoais, documentos privados ou código de origem desconhecida. O executor não tem acesso ao armazenamento da aplicação e bloqueia conexões de rede.</p>
+      <p className="lab-safety-note">Ambiente didático local: não cole senhas, dados pessoais, documentos privados ou código de origem desconhecida. O executor não tem acesso ao armazenamento da aplicação e restringe requisições de rede por política de segurança do conteúdo.</p>
     </section>
   );
 }
