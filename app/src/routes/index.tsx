@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { flashcards, glossary, modules, projects, quizQuestions } from "../data/curriculum";
 import { lessonDepth } from "../data/lesson-depth";
+import { applicationDomains, applicationGroups } from "../data/application-domains";
+import { learningResources } from "../data/learning-resources";
 import {
   EMPTY_PROGRESS,
   isValidProgress,
@@ -12,10 +14,11 @@ import {
 
 export const Route = createFileRoute("/")({ component: AILab });
 
-type Tab = "home" | "tracks" | "lab" | "library" | "assessment";
+type Tab = "home" | "tracks" | "applications" | "lab" | "library" | "assessment";
 const tabs: { id: Tab; label: string; symbol: string }[] = [
   { id: "home", label: "Visão geral", symbol: "⌂" },
   { id: "tracks", label: "Trilhas", symbol: "▤" },
+  { id: "applications", label: "Áreas de aplicação", symbol: "◈" },
   { id: "lab", label: "Laboratório", symbol: "⌁" },
   { id: "library", label: "Biblioteca", symbol: "⌕" },
   { id: "assessment", label: "Avaliações", symbol: "◷" },
@@ -35,6 +38,9 @@ function AILab() {
   const [ready, setReady] = useState(false);
   const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
   const [selectedModuleId, setSelectedModuleId] = useState(modules[0].id);
+  const [selectedApplicationId, setSelectedApplicationId] = useState(applicationDomains[0].id);
+  const [applicationGroup, setApplicationGroup] = useState("Todas");
+  const [applicationSearch, setApplicationSearch] = useState("");
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [libraryMode, setLibraryMode] = useState<"cards" | "glossary">("cards");
   const [librarySearch, setLibrarySearch] = useState("");
@@ -270,6 +276,41 @@ function AILab() {
             ) : (
               <div className="curriculum-layout"><aside className="module-index"><div className="module-index-title">PERCURSO COMPLETO <strong>08</strong></div>{modules.map((module, index) => { const done = module.lessons.filter((lesson) => progress.completedLessonIds.includes(lesson.id)).length; return <button key={module.id} className={`module-index-item ${selectedModuleId === module.id ? "selected" : ""}`} onClick={() => setSelectedModuleId(module.id)}><span className="module-index-number">{String(index + 1).padStart(2, "0")}</span><span><strong>{module.title}</strong><small>{done} de {module.lessons.length} aulas</small></span><i>→</i></button>; })}</aside><div className="module-detail"><div className="module-detail-head"><div><span className="section-kicker">TRILHA {String(modules.findIndex((module) => module.id === selectedModule.id) + 1).padStart(2, "0")} / {selectedModule.level.toUpperCase()}</span><h2>{selectedModule.title}</h2><p>{selectedModule.description}</p></div><div className="module-duration"><strong>{selectedModule.duration}</strong><small>ESTIMATIVA</small></div></div><div className="module-progress-line"><span><i style={{ width: `${Math.round((selectedModule.lessons.filter((lesson) => progress.completedLessonIds.includes(lesson.id)).length / selectedModule.lessons.length) * 100)}%` }} /></span><small>{selectedModule.lessons.filter((lesson) => progress.completedLessonIds.includes(lesson.id)).length} / {selectedModule.lessons.length} concluídas</small></div><div className="lesson-list">{selectedModule.lessons.map((lesson, index) => { const done = progress.completedLessonIds.includes(lesson.id); return <button key={lesson.id} className="lesson-row" onClick={() => openLesson(lesson.id)}><span className={`lesson-row-index ${done ? "done" : ""}`}>{done ? "✓" : String(index + 1).padStart(2, "0")}</span><span className="lesson-row-copy"><strong>{lesson.title}</strong><small>{lesson.summary}</small></span><span className="lesson-row-time">{lesson.duration} min</span><span className="lesson-row-arrow">↗</span></button>; })}</div></div></div>
             )}
+          </section>
+        )}
+
+        {tab === "applications" && (
+          <section className="page-content">
+            <PageIntro eyebrow="IA EM TODOS OS SETORES" title="Campos de aplicação" description="A mesma base técnica pode resolver problemas muito diferentes. Explore setores, problemas, métodos, dados, projetos e riscos antes de escolher uma especialização." />
+            <div className="application-intro">
+              <div className="application-flow"><span>Problema real</span><i>→</i><span>Dados confiáveis</span><i>→</i><span>Método adequado</span><i>→</i><span>Validação</span><i>→</i><span>Uso responsável</span></div>
+              <p>Uma aplicação profissional não começa escolhendo a ferramenta da moda. Começa definindo a decisão que precisa melhorar, quem será afetado, quais dados existem e como o resultado será validado.</p>
+            </div>
+            <div className="application-toolbar">
+              <label className="search-field"><span>⌕</span><input value={applicationSearch} onChange={(event) => setApplicationSearch(event.target.value)} placeholder="Buscar setor ou aplicação..." /></label>
+              <div className="application-filters">{applicationGroups.map((group) => <button key={group} className={applicationGroup === group ? "selected" : ""} onClick={() => setApplicationGroup(group)}>{group}</button>)}</div>
+            </div>
+            <div className="application-grid">
+              {applicationDomains.filter((domain) => (applicationGroup === "Todas" || domain.group === applicationGroup) && `${domain.name} ${domain.summary} ${domain.useCases.join(" ")} ${domain.group}`.toLowerCase().includes(applicationSearch.toLowerCase())).map((domain) => (
+                <button key={domain.id} className={`application-card ${selectedApplicationId === domain.id ? "selected" : ""}`} onClick={() => setSelectedApplicationId(domain.id)}>
+                  <span className="application-card-group">{domain.group}</span><strong>{domain.name}</strong><p>{domain.summary}</p><span className="application-card-link">Explorar aplicações ↗</span>
+                </button>
+              ))}
+            </div>
+            {(() => { const domain = applicationDomains.find((item) => item.id === selectedApplicationId); return domain ? (
+              <article className="application-detail">
+                <div className="application-detail-head"><div><span className="section-kicker">DOS CONCEITOS À PRÁTICA · {domain.group.toUpperCase()}</span><h2>{domain.name}</h2><p>{domain.summary}</p></div><span className="application-count">{domain.useCases.length} frentes de aplicação</span></div>
+                <div className="application-detail-grid">
+                  <section><h3>Onde a IA pode ser aplicada</h3><ul>{domain.useCases.map((item) => <li key={item}>{item}</li>)}</ul></section>
+                  <section><h3>Projeto de laboratório</h3><p>{domain.project}</p><h3>Métodos e tecnologias</h3><div className="application-tags">{domain.methods.map((method) => <span key={method}>{method}</span>)}</div></section>
+                  <section><h3>Dados necessários</h3><p>{domain.data}</p><h3>Limitações e responsabilidade</h3><p>{domain.cautions}</p></section>
+                </div>
+              </article>
+            ) : <div className="empty-state">Nenhuma área encontrada. Ajuste a busca ou o filtro.</div>; })()}
+            <section className="reference-library">
+              <div className="reference-heading"><span className="section-kicker">FONTES PARA ESTUDO</span><h2>Biblioteca técnica e científica</h2><p>Comece por materiais institucionais e documentação primária. Confira sempre a versão e a data de atualização antes de reproduzir um procedimento.</p></div>
+              <div className="reference-grid">{learningResources.map((resource) => <a className="reference-card" key={resource.url} href={resource.url} target="_blank" rel="noreferrer"><span>{resource.kind} · {resource.institution}</span><strong>{resource.title}</strong><p>{resource.topics}</p><b>Consultar fonte ↗</b></a>)}</div>
+            </section>
           </section>
         )}
 
