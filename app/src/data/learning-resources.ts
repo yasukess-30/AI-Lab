@@ -20,5 +20,7 @@ export const learningResources: LearningResource[] = [
  {title:"Earth Engine Guides",institution:"Google",kind:"Documentação técnica",url:"https://developers.google.com/earth-engine/guides",topics:"Sensoriamento remoto, imagens de satélite e análise geoespacial"},
  {title:"NASA Open Science Data",institution:"NASA",kind:"Dados científicos",url:"https://data.nasa.gov/",topics:"Dados de ciência espacial, observação da Terra e exploração"},
  {title:"PhysioNet",institution:"PhysioNet",kind:"Repositório de dados",url:"https://physionet.org/",topics:"Sinais fisiológicos e conjuntos de dados biomédicos para pesquisa"},
- {title:"FAO Digital Agriculture",institution:"FAO",kind:"Pesquisa e referência",url:"https://www.fao.org/digital-agriculture/en/",topics:"Agricultura digital, dados, serviços e transformação agroalimentar"}
+ {title:"FAO Digital Agriculture",institution:"FAO",kind:"Pesquisa e referência",url:"https://www.fao.org/digital-agriculture/en/",topics:"Agricultura digital, dados, serviços e transformação agroalimentar"},
+ {title:"MIT OpenCourseWare — videoaulas",institution:"MIT",kind:"Canal oficial de vídeo",url:"https://www.youtube.com/@mitocw",topics:"Aulas universitárias abertas de matemática, computação, engenharia e inteligência artificial"},
+ {title:"Stanford University — lectures and seminars",institution:"Stanford University",kind:"Canal oficial de vídeo",url:"https://www.youtube.com/@stanford",topics:"Palestras, disciplinas e seminários de pesquisa em IA, ciência e engenharia"}
 ];
