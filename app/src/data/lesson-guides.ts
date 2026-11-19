@@ -1148,9 +1148,8 @@ resposta = decodificar(contexto)`,
       }
     ]
   }
-}
-,
-{
+  },
+  ...{
   "trend-motores": {
     "lead": "Trend monitoring acompanha parâmetros de motor ao longo do tempo para identificar desvios em relação a uma referência comparável. A análise precisa respeitar condições de operação, configuração, instrumento e metodologia aplicável.",
     "sections": [
