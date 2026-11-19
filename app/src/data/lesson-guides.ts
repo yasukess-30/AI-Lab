@@ -1150,4 +1150,895 @@ resposta = decodificar(contexto)`,
     ]
   }
 }
+,
+{
+  "trend-motores": {
+    "lead": "Trend monitoring acompanha parâmetros de motor ao longo do tempo para identificar desvios em relação a uma referência comparável. A análise precisa respeitar condições de operação, configuração, instrumento e metodologia aplicável.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Parâmetros como EGT, N1, N2, fuel flow, pressão e temperatura variam com potência, altitude, velocidade, temperatura ambiente, bleed e configuração. Baseline representa comportamento de referência; normalização só deve seguir método documentado.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Análise histórica, visualização de tendência e apoio à priorização de avaliação técnica. Médias móveis e regressão ajudam a visualizar evolução, mas não diagnosticam causa raiz.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Misturar condições incomparáveis cria tendências artificiais. Preserve dados brutos e corrigidos; documente exclusões, unidade e método; encaminhe desvios conforme programa autorizado. Não extrapole sem justificativa.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Use dados sintéticos; segmente por condição operacional; compare gráfico bruto e média móvel; teste sensibilidade a pontos extremos; escreva nota com período, método, unidade, limitações e encaminhamento."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Por que comparar parâmetros sem condição operacional pode induzir a erro?",
+      "O que é baseline?",
+      "Como diferenciar desvio estatístico de diagnóstico?"
+    ],
+    "references": [
+      {
+        "title": "FAA — Aviation Maintenance Handbooks",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation"
+      },
+      {
+        "title": "NASA — Prognostics and Health Management",
+        "url": "https://www.nasa.gov/intelligent-systems-division/"
+      }
+    ]
+  },
+  "inspecao-aero": {
+    "lead": "Imagens podem ajudar a localizar padrões visuais e organizar evidências de inspeção, mas não substituem métodos, limites, iluminação, acesso ou critérios técnicos definidos para a tarefa.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Classificação atribui categoria; detecção localiza regiões; segmentação delimita pixels. Qualidade depende de câmera, lente, escala, ângulo, iluminação, foco e área visível. Dados devem representar materiais, superfícies e condições reais.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Triagem de imagens autorizadas, organização de achados, comparação visual e priorização de revisão humana. Resultados inconclusivos devem ser encaminhados ao processo técnico apropriado.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Não declarar aeronavegabilidade nem aceitar/rejeitar peça somente por score. Controle versão, origem e escala; preserve imagem original; não substitua ensaio ou inspeção exigida.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Use imagens públicas ou didáticas autorizadas; classifique exemplos não críticos; registre condições de captura; compare erros; escreva relatório que diferencie sugestão algorítmica de conclusão técnica."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Por que uma imagem não demonstra profundidade de dano?",
+      "Quais variáveis de captura afetam a detecção?",
+      "O que fazer com resultado inconclusivo?"
+    ],
+    "references": [
+      {
+        "title": "FAA — Aviation Maintenance Handbooks",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation"
+      },
+      {
+        "title": "Ultralytics — Computer Vision Tasks",
+        "url": "https://docs.ultralytics.com/tasks/"
+      }
+    ]
+  },
+  "negocios": {
+    "lead": "Monetizar IA não é vender a palavra IA: é resolver um problema recorrente para alguém que reconhece valor na solução. A oportunidade precisa ser validada com clientes, custos, capacidade de entrega e responsabilidade.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Uma oferta combina público, problema, resultado, escopo, prazo, preço e evidência. Diferencie serviço assistido por IA, produto digital e software recorrente. A tecnologia é meio; o valor percebido e a confiança sustentam a compra.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Automação administrativa, organização documental, edição de mídia, relatórios, busca em acervos, análise de dados e capacitação. Escolha um nicho onde seja possível observar o processo e medir antes/depois.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Não prometa precisão, economia ou conformidade sem evidência. Considere privacidade, direitos autorais, revisão humana, suporte, custo de ferramentas e dependência de fornecedores.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Entreviste três potenciais clientes; mapeie tarefa, frequência, tempo e custo; proponha uma entrega pequena; estime horas, ferramentas e suporte; teste disposição real de pagamento antes de desenvolver produto."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Qual a diferença entre vender ferramenta e vender resultado?",
+      "Que evidências validam uma oferta?",
+      "Quais custos recorrentes devem entrar no preço?"
+    ],
+    "references": [
+      {
+        "title": "Strategyzer — Value Proposition Canvas",
+        "url": "https://www.strategyzer.com/library/the-value-proposition-canvas"
+      },
+      {
+        "title": "Sebrae — Gestão e empreendedorismo",
+        "url": "https://sebrae.com.br/"
+      }
+    ]
+  },
+  "problema-oferta": {
+    "lead": "Uma boa oportunidade nasce de uma dor frequente, custosa e mal resolvida. Ideias interessantes não são necessariamente negócios. A investigação começa observando como o trabalho é feito hoje e quem sofre as consequências.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Mapeie usuário, tarefa, frequência, exceções, ferramentas, retrabalho e impacto. Diferencie usuário, comprador e aprovador. Uma dor pode ser importante, mas não ter orçamento, prioridade ou dados disponíveis para resolvê-la.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Exemplos incluem retrabalho em documentos, demora em localizar informação, falhas de passagem de turno, atendimento repetitivo e relatórios manuais. A solução pode ser processo melhor, automação simples ou IA.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Evite entrevistas que induzam elogios. Não confunda curiosidade com intenção de compra. Verifique acesso legal aos dados e se uma regra simples resolve o problema com menor risco.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Observe um processo real; desenhe etapas; conte ocorrências e tempo; entreviste usuários com perguntas sobre fatos passados; estime custo do problema; formule hipótese testável e critério de sucesso."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Como diferenciar usuário e comprador?",
+      "Por que elogio não valida demanda?",
+      "Quando uma regra simples é melhor que IA?"
+    ],
+    "references": [
+      {
+        "title": "Sebrae — Pesquisa de mercado",
+        "url": "https://sebrae.com.br/"
+      },
+      {
+        "title": "Strategyzer — Value Proposition Canvas",
+        "url": "https://www.strategyzer.com/library/the-value-proposition-canvas"
+      }
+    ]
+  },
+  "mvp-portfolio": {
+    "lead": "MVP é a menor solução capaz de testar uma hipótese importante com usuários reais; não é um produto incompleto sem propósito. Um bom portfólio demonstra problema, processo, decisões, resultados, limites e aprendizado.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Defina hipótese, público, tarefa, métrica e critério de interrupção. Protótipo testa compreensão; piloto testa uso em contexto; produto exige confiabilidade, suporte, segurança e manutenção. Não confunda demonstração técnica com validação comercial.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Projetos demonstráveis incluem assistente RAG com citações, fluxo de automação com aprovação, classificador em dados públicos e painel de anomalias sintéticas. Mostre entradas, saídas e falhas, não apenas telas bonitas.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Use dados sintéticos ou autorizados; não publique segredos ou dados pessoais. Declare limitações e não apresente resultado simulado como ganho real de cliente.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Escolha uma hipótese; construa protótipo de escopo limitado; teste com usuários; registre tarefas concluídas, erros e feedback; publique estudo de caso com arquitetura, métricas, custos e limitações."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Qual a diferença entre protótipo e produto?",
+      "O que torna uma métrica de MVP útil?",
+      "Por que declarar limites fortalece o portfólio?"
+    ],
+    "references": [
+      {
+        "title": "Y Combinator — Startup Library",
+        "url": "https://www.ycombinator.com/library"
+      },
+      {
+        "title": "GitHub Docs — About READMEs",
+        "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes"
+      }
+    ]
+  },
+  "precificacao": {
+    "lead": "Preço sustentável precisa cobrir trabalho, ferramentas, impostos, suporte, risco e margem. Cobrar apenas pelo tempo de execução da IA ignora descoberta, revisão, integração, manutenção e responsabilidade pelo resultado.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Calcule custo direto, horas de análise, implementação, testes, treinamento, suporte e contingência. Escolha unidade de cobrança coerente: projeto, assinatura, volume ou hora. Defina limites de uso e o que conta como mudança de escopo.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Pacotes podem separar diagnóstico, piloto, implantação e manutenção. Um preço fixo funciona melhor quando entregáveis e critérios de aceite são claros; recorrência exige serviço contínuo identificável.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Evite garantia absoluta sobre saída probabilística. Defina dados fornecidos pelo cliente, retenção, confidencialidade, revisão, disponibilidade, exclusões e processo de correção. Busque orientação contábil/jurídica quando necessário.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Monte orçamento fictício com horas, ferramentas, impostos estimados, suporte e margem; descreva entregáveis, limites, dependências, aceite, manutenção e itens cobrados à parte."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Quais custos são esquecidos ao precificar?",
+      "Quando preço fixo é arriscado?",
+      "Por que escopo e critérios de aceite precisam estar no contrato?"
+    ],
+    "references": [
+      {
+        "title": "Sebrae — Formação de preço",
+        "url": "https://sebrae.com.br/"
+      },
+      {
+        "title": "Sebrae — Gestão financeira",
+        "url": "https://sebrae.com.br/"
+      }
+    ]
+  },
+  "relatorio-inspecao": {
+    "lead": "Um relatório inteligente organiza evidências, padroniza campos e ajuda a redigir observações; não deve inventar medições, classificar conformidade sem critério ou substituir a assinatura do responsável técnico.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "O fluxo recebe dados estruturados e evidências, valida campos obrigatórios, associa imagens e gera um rascunho. LLM pode resumir observações, mas números, unidades, identificação, norma e conclusão devem vir de fontes verificáveis.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Aplicável a inspeções de equipamentos, qualidade e manutenção não regulada. O ganho pode estar na redução de retrabalho, consistência de linguagem e facilidade de localizar histórico.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Não invente resultados ausentes. Diferencie observação, hipótese e conclusão. Proteja dados do cliente; mantenha original, revisão humana, versão e trilha de alterações.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Crie formulário com ativo, data, inspetor, item, medida, unidade, evidência e observação; valide campos; gere rascunho; confira cada afirmação contra os dados; exporte com status 'rascunho para revisão'."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Quais campos devem ser estruturados?",
+      "Como impedir que o modelo invente uma medição?",
+      "Por que o documento deve indicar que é rascunho?"
+    ],
+    "references": [
+      {
+        "title": "NIST AI RMF",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "title": "OWASP — Top 10 for LLM Applications",
+        "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+      }
+    ]
+  },
+  "rag-manuais": {
+    "lead": "RAG combina recuperação de trechos com geração de linguagem. O modelo responde usando contexto recuperado, mas a confiabilidade depende da versão documental, fragmentação, busca, filtros e verificação das citações.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Ingestão extrai texto e metadados; chunking divide conteúdo; embeddings representam trechos em vetores; recuperação seleciona candidatos; reranking pode reordenar; geração formula resposta com fontes. Busca lexical e semântica podem ser combinadas.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Consulta a manuais públicos, políticas internas autorizadas e procedimentos não críticos. Respostas úteis apontam documento, revisão, seção e página e permitem abrir a fonte.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Não indexe material sem permissão. Filtre versão e aplicabilidade; defenda contra prompt injection em documentos; não transforme resumo em instrução técnica; admita ausência de evidência.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Use três documentos públicos; extraia título e página; crie chunks; faça busca lexical/semântica; formule perguntas respondíveis e impossíveis; avalie precisão da recuperação e fidelidade das citações."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "O que embeddings fazem?",
+      "Por que metadados de revisão são essenciais?",
+      "Como o sistema deve responder sem evidência?"
+    ],
+    "references": [
+      {
+        "title": "Hugging Face — RAG",
+        "url": "https://huggingface.co/docs/transformers/model_doc/rag"
+      },
+      {
+        "title": "OWASP — LLM Top 10",
+        "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+      }
+    ]
+  },
+  "anomalia-motor": {
+    "lead": "Um monitor de anomalias acompanha sinais de um motor e sinaliza desvios para investigação. O objetivo inicial é triagem e visibilidade, não diagnóstico automático nem comando de parada.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Dados típicos incluem vibração, temperatura, corrente, rotação e carga. Características como RMS, pico, fator de crista e espectro dependem da taxa de amostragem, montagem do sensor e regime. Contexto evita confundir carga variável com defeito.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Painel pode exibir tendência, faixa de referência, qualidade do sensor, alertas e histórico de inspeções. Comece com dados sintéticos ou conjuntos públicos e valide com especialistas antes de uso real.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Não use alarme como proteção de máquina. Controle taxa de falsos alarmes, perda de sensor, deriva e mudanças de montagem. Qualquer ação física deve permanecer em sistemas de proteção independentes e aprovados.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Gere sinais sintéticos em regimes distintos; calcule RMS e tendência; detecte valores incomuns; adicione estado de qualidade; construa painel e avalie falsos alarmes por regime."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Por que RMS depende do regime?",
+      "Qual o efeito da taxa de amostragem?",
+      "Por que monitor não deve substituir proteção?"
+    ],
+    "references": [
+      {
+        "title": "NASA — Prognostics and Health Management",
+        "url": "https://www.nasa.gov/intelligent-systems-division/"
+      },
+      {
+        "title": "Scikit-learn — Outlier detection",
+        "url": "https://scikit-learn.org/stable/modules/outlier_detection.html"
+      }
+    ]
+  },
+  "visao-defeitos": {
+    "lead": "Um detector visual identifica padrões em imagens e pode apoiar triagem de qualidade. Para ser útil, precisa controlar aquisição, definir defeito, medir desempenho por classe e encaminhar incerteza para revisão.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "O pipeline inclui captura, pré-processamento, anotação, divisão dos dados, treinamento, inferência e auditoria. Classificação, detecção e segmentação têm saídas diferentes. Métricas devem refletir tamanho, frequência e custo do defeito.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Pode ser aplicado a riscos, amassados, porosidade superficial e falhas de acabamento em conjuntos didáticos. O projeto deve demonstrar limites de iluminação, escala e variação de peça.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Falsos negativos podem liberar defeitos; falsos positivos geram retrabalho. Separe por lote, evite vazamento, monitore mudança de câmera e mantenha inspeção humana conforme risco.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Escolha dataset autorizado; anote regiões; divida por peça/lote; treine modelo simples; calcule precision/recall; mostre falsos positivos e negativos; defina rejeição por baixa confiança."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Qual a diferença entre classificação e detecção?",
+      "Por que separar por lote?",
+      "Como escolher limiar considerando falsos negativos?"
+    ],
+    "references": [
+      {
+        "title": "MVTec AD dataset",
+        "url": "https://www.mvtec.com/company/research/datasets/mvtec-ad"
+      },
+      {
+        "title": "Ultralytics documentation",
+        "url": "https://docs.ultralytics.com/"
+      }
+    ]
+  },
+  "automacao-oficina": {
+    "lead": "Automatizar atendimento é organizar entrada, triagem, orçamento e acompanhamento sem prometer diagnóstico remoto. O sistema deve reduzir esquecimentos e melhorar comunicação, preservando aprovação do cliente e responsabilidade do profissional.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Um fluxo pode receber formulário ou mensagem, validar dados, criar ordem preliminar, classificar assunto, consultar agenda e preparar resposta. Integrações exigem identidade do cliente, consentimento, logs e tratamento de falhas.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Agendamento, lembrete, atualização de status, coleta de dados do veículo, envio de orçamento para aprovação e pesquisa de satisfação. Comece por tarefas administrativas repetitivas.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Não confirme diagnóstico, preço ou prazo sem validação. Proteja telefone, placa e histórico; evite mensagens duplicadas; ofereça atendimento humano; não execute compra ou serviço sem autorização registrada.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Desenhe fluxo para solicitação de orçamento; colete apenas dados necessários; gere protocolo; encaminhe para avaliação; envie proposta como rascunho; exija aceite explícito antes de agendar serviço."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Quais dados são necessários e quais são excessivos?",
+      "Por que orçamento deve ser aprovado?",
+      "Como evitar duplicidade de mensagens?"
+    ],
+    "references": [
+      {
+        "title": "n8n documentation",
+        "url": "https://docs.n8n.io/"
+      },
+      {
+        "title": "ANPD — Guia orientativo de agentes de tratamento",
+        "url": "https://www.gov.br/anpd/pt-br/documentos-e-publicacoes"
+      }
+    ]
+  },
+  "trend-motor-aero": {
+    "lead": "Este projeto didático demonstra visualização e análise de tendência com dados sintéticos. Não é ferramenta de diagnóstico, manutenção ou decisão de aeronavegabilidade. Dados reais exigem autorização, metodologia e documentação aplicáveis.",
+    "sections": [
+      {
+        "title": "1. Fundamentos e arquitetura",
+        "explanation": "Um painel precisa preservar parâmetro, unidade, timestamp, condição operacional, configuração e qualidade. Comparação deve usar amostras equivalentes e metodologia de correção documentada; pontos incomparáveis devem ser identificados, não escondidos.",
+        "points": [
+          "Defina a decisão apoiada, entradas, saídas e unidade de análise.",
+          "Registre origem, versão, unidade, contexto e responsável.",
+          "Comece por uma linha de base simples e verificável."
+        ]
+      },
+      {
+        "title": "2. Aplicações e estudo de caso",
+        "explanation": "Gráficos de série, baseline, faixa de referência didática, filtros por condição, histórico de eventos e exportação de relatório podem apoiar ensino de análise de dados.",
+        "points": [
+          "Escolha um caso com impacto mensurável e dados legalmente utilizáveis.",
+          "Compare com o processo atual e estime custo de implantação e manutenção.",
+          "Mantenha revisão humana proporcional ao risco."
+        ]
+      },
+      {
+        "title": "3. Limitações, segurança e governança",
+        "explanation": "Não utilize limiares inventados como limites de motor. Não misture dados reais de aeronaves sem autorização. Não converta desvio em instrução de manutenção; encaminhe interpretação à documentação e ao pessoal autorizado.",
+        "points": [
+          "Registre origem e versão dos dados, modelo e ferramentas.",
+          "Defina limites de uso, fallback, monitoramento e responsável.",
+          "Interrompa o sistema quando dados ou condições saírem da faixa validada."
+        ]
+      },
+      {
+        "title": "4. Implementação e avaliação",
+        "explanation": "Um projeto reproduzível documenta problema, dados, método, avaliação e manutenção. A avaliação precisa refletir o custo real dos erros e a população em que o sistema será usado.",
+        "points": [
+          "Separe treino, validação e teste respeitando tempo e grupos.",
+          "Documente transformações, parâmetros e critérios de avaliação.",
+          "Avalie o sistema completo, não apenas a métrica isolada do modelo."
+        ]
+      }
+    ],
+    "lab": [
+      {
+        "step": "Definir escopo",
+        "detail": "Gere série sintética de EGT com condições simuladas; separe dados comparáveis; mostre bruto e tendência; sinalize amostra insuficiente; exporte relatório com aviso didático e sem recomendação operacional."
+      },
+      {
+        "step": "Preparar e validar",
+        "detail": "Registre origem, unidade, qualidade, permissões e divisão dos dados. Construa uma linha de base e defina métricas adequadas."
+      },
+      {
+        "step": "Executar e avaliar",
+        "detail": "Compare resultados com a linha de base; examine erros por subgrupo e condições; não extrapole além da faixa validada."
+      },
+      {
+        "step": "Documentar e revisar",
+        "detail": "Produza relatório com hipótese, método, evidências, limitações, decisão apoiada, revisão humana e critérios de interrupção."
+      }
+    ],
+    "assessment": [
+      "Por que o painel deve mostrar condições de operação?",
+      "Qual o risco de criar limite arbitrário?",
+      "Como diferenciar tendência de diagnóstico?"
+    ],
+    "references": [
+      {
+        "title": "ANAC — Legislação",
+        "url": "https://www.gov.br/anac/pt-br/assuntos/legislacao"
+      },
+      {
+        "title": "FAA — Aviation Maintenance Handbooks",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation"
+      }
+    ]
+  }
+}
 };
