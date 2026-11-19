@@ -34,6 +34,9 @@ jobs:
       # Deploys always ship the design inspector: apps-ci / apps-ci-dev export
       # HF_DESIGN_INSPECTOR=1 before `bun run build`. Validate that exact
       # artifact here — one build, not a separate plain + design pair.
+      - name: Validate interactive labs
+        run: bun run validate:labs
+
       - name: Build (design inspector on, as deploys ship it)
         env:
           HF_DESIGN_INSPECTOR: "1"

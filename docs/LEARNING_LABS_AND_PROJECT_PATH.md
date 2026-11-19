@@ -10,10 +10,10 @@ Os 12 laboratórios iniciais foram escolhidos para ensinar uma sequência de com
 
 | Nível | Competência | Laboratórios | Entrega demonstrável |
 | --- | --- | --- | --- |
-| 1 — Fundamentos | Lógica, dados, classificação, unidades | `ia-mapa`, `tipos-aprendizado`, `engenharia` | Caderno de hipóteses e cálculos conferidos |
+| 1 — Fundamentos | Lógica, dados, classificação, unidades | `ia-mapa`, `tipos-aprendizado`, `cad-cae` | Caderno de hipóteses e cálculos conferidos |
 | 2 — Qualidade de dados | Auditoria, vazamento, métricas e séries | `pipeline-ia`, `anomalias`, `visao-qualidade` | Relatório de qualidade e matriz de confusão |
-| 3 — Sistemas aplicados | Busca, automação e avaliação | `rag`, `automacao-mcp`, `negocios` | Mini buscador com fontes, fluxo idempotente e proposta de serviço |
-| 4 — Especialização | Manutenção e trend monitoring | `preditiva`, `trend-motores`, `visao-defeitos` | Painel didático, análise de tendência e política de inspeção |
+| 3 — Sistemas aplicados | Busca, automação e avaliação | `rag`, `automacao-mcp`, `precificacao` | Mini buscador com fontes, fluxo idempotente e proposta de serviço |
+| 4 — Especialização | Manutenção e trend monitoring | `preditiva`, `trend-motores`, `inspecao-aero` | Painel didático, análise de tendência e política de inspeção |
 
 ## Projetos integradores sugeridos
 

@@ -4,7 +4,7 @@
 
 O AI LAB é uma academia independente e multidisciplinar de Inteligência Artificial. Seu propósito é ensinar desde os fundamentos matemáticos e computacionais até a pesquisa, implementação, avaliação e operação responsável de sistemas de IA. A formação conecta conceitos a problemas reais em saúde, ciência, agricultura, meio ambiente, engenharia, indústria, finanças, direito, educação, arte, robótica, transporte e outras áreas. O foco é profundidade técnica com clareza didática: fundamentos antes das ferramentas, evidência antes de afirmações e projetos avaliados por critérios explícitos.
 
-Este repositório contém o código-fonte da aplicação e os arquivos necessários para seu desenvolvimento e implantação.
+Este repositório contém o código-fonte da aplicação e os arquivos necessários para seu desenvolvimento e implantação. A aplicação também inclui laboratórios JavaScript executáveis no navegador, com datasets sintéticos para download e desafios progressivos.
 
 ---
 
@@ -58,6 +58,8 @@ AI-Lab/
 
 - [Fluxo de branches, commits e Pull Requests](docs/DEVELOPMENT_WORKFLOW.md)
 - [Organização dos diretórios e responsabilidades](docs/PROJECT_STRUCTURE.md)
+- [Laboratórios executáveis e percurso de projetos](docs/LEARNING_LABS_AND_PROJECT_PATH.md)
+- [Pesquisa de hospedagem, banco de dados e servidor local](docs/HOSTING_DATABASE_AND_LOCAL_SERVER.md)
 - [Modelo de Pull Request](.github/PULL_REQUEST_TEMPLATE.md)
 
 As novas etapas devem ser desenvolvidas em branches descritivas, validadas por CI e integradas por Pull Request. A branch `main` deve permanecer como referência estável do projeto.
