@@ -258,7 +258,8 @@ resposta = decodificar(contexto)`,
   assessment:["Por que descrever uma imagem não equivale a medir uma dimensão?","Qual a diferença entre transcrição e interpretação de áudio?","Quais informações devem ser preservadas para rastrear uma análise de documento?"],
   references:[{title:"WHO — Ethics and governance of AI for health",url:"https://www.who.int/publications/i/item/9789240084759"},{title:"Hugging Face — Multimodal models",url:"https://huggingface.co/docs/transformers/tasks"}]
  },
-  "agentes": {
+  ...{
+    "agentes": {
     "lead": "Um agente percebe contexto, escolhe ações e observa resultados para perseguir um objetivo. Um chatbot que apenas responde texto não é necessariamente um agente; a diferença aparece quando há planejamento, estado, ferramentas e execução sob limites.",
     "sections": [
       {
@@ -2037,5 +2038,6 @@ resposta = decodificar(contexto)`,
         "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation"
       }
     ]
+  }
   }
 };
