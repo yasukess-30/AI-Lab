@@ -24,7 +24,7 @@ export const lessonGuides: Record<string, LessonGuide> = {
    {step:"Treine e separe dados",detail:"Separe treino, validação e teste antes de ajustar hiperparâmetros. Nunca use o conjunto de teste para escolher o modelo."},
    {step:"Analise erros",detail:"Inspecione exemplos classificados incorretamente. Agrupe erros por categoria, origem dos dados e impacto para o usuário."}
   ],
-  code:"# Exemplo conceitual: modelo como função
+  code:`# Exemplo conceitual: modelo como função
 # x = características de uma observação
 # theta = parâmetros aprendidos no treinamento
 
@@ -32,7 +32,7 @@ def prever(x, theta):
     return modelo(x, theta)
 
 # O treinamento procura parâmetros que reduzam a perda.
-# O teste mede a generalização em dados não vistos.",
+# O teste mede a generalização em dados não vistos.`,
   assessment:["Explique por que toda rede neural é um modelo de machine learning, mas nem todo sistema de IA é uma rede neural.","Dê um exemplo em que uma regra explícita é preferível a deep learning.","Por que medir desempenho apenas nos dados de treinamento não demonstra generalização?"],
   references:[{title:"Google Machine Learning Crash Course",url:"https://developers.google.com/machine-learning/crash-course"},{title:"Stanford CS229",url:"https://cs229.stanford.edu/"}]
  },
@@ -68,7 +68,7 @@ def prever(x, theta):
    {step:"Simule mudança de distribuição",detail:"Separe dados por período e compare desempenho em períodos antigos e recentes."},
    {step:"Escreva critérios de liberação",detail:"Defina métrica mínima, análise de subgrupos, custo operacional, fallback e responsável pela aprovação."}
   ],
-  code:"# Exemplo de divisão temporal (conceitual)
+  code:`# Exemplo de divisão temporal (conceitual)
 # Nunca embaralhe dados temporais sem justificar.
 
 train = dados[dados.data < "2025-01-01"]
@@ -77,7 +77,7 @@ valid = dados[(dados.data >= "2025-01-01") &
 test  = dados[dados.data >= "2025-04-01"]
 
 # Ajuste transformações no treino e aplique-as
-# sem recalcular parâmetros usando validação/teste.",
+# sem recalcular parâmetros usando validação/teste.`,
   assessment:["Explique o que é vazamento de dados e dê um exemplo temporal.","Qual a diferença entre validação e teste?","Quais sinais devem ser monitorados após colocar um modelo em produção?"],
   references:[{title:"Google ML Crash Course — production ML systems",url:"https://developers.google.com/machine-learning/crash-course"},{title:"NIST AI Risk Management Framework",url:"https://www.nist.gov/itl/ai-risk-management-framework"}]
  },
@@ -96,14 +96,14 @@ test  = dados[dados.data >= "2025-04-01"]
    {step:"Teste sensibilidade ao contexto",detail:"Faça a mesma pergunta com contexto ausente, contexto correto e contexto contraditório. Identifique como a saída muda."},
    {step:"Separe fluência de evidência",detail:"Exija fontes verificáveis para afirmações factuais e confira as fontes independentemente."}
   ],
-  code:"# Geração autoregressiva: esquema simplificado
+  code:`# Geração autoregressiva: esquema simplificado
 contexto = tokenizar(prompt)
 while not fim:
     logits = modelo(contexto)
     probabilidades = softmax(logits[-1])
     proximo = estrategia_de_decodificacao(probabilidades)
     contexto.append(proximo)
-resposta = decodificar(contexto)",
+resposta = decodificar(contexto)`,
   assessment:["Por que um token não equivale necessariamente a uma palavra?","O que a máscara causal impede?","Por que uma resposta fluente não é evidência de que o conteúdo é verdadeiro?"],
   references:[{title:"The Illustrated Transformer",url:"https://jalammar.github.io/illustrated-transformer/"},{title:"Hugging Face Transformers documentation",url:"https://huggingface.co/docs/transformers"},{title:"Attention Is All You Need",url:"https://arxiv.org/abs/1706.03762"}]
  },
