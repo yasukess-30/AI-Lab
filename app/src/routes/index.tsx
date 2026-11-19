@@ -181,6 +181,7 @@ function AILab() {
 
   const filteredGlossary = glossary.filter((item) => `${item.term} ${item.definition}`.toLowerCase().includes(librarySearch.toLowerCase()));
   const filteredCards = flashcards.filter((item) => `${item.front} ${item.back}`.toLowerCase().includes(librarySearch.toLowerCase()));
+  const filteredApplications = applicationDomains.filter((domain) => (applicationGroup === "Todas" || domain.group === applicationGroup) && `${domain.name} ${domain.summary} ${domain.useCases.join(" ")} ${domain.group}`.toLowerCase().includes(applicationSearch.toLowerCase()));
 
   return (
     <div className="app-frame">
@@ -221,7 +222,7 @@ function AILab() {
                 <div className="eyebrow"><span className="eyebrow-line" /> CENTRO DE APRENDIZAGEM</div>
                 <h1>Entenda a IA.<br /><em>Aplique na prática.</em></h1>
                 <p>Uma formação técnica multidisciplinar para entender como a IA funciona, construir soluções e aplicá-las em ciência, saúde, indústria, agricultura, negócios, educação, arte e muito mais.</p>
-                <div className="hero-actions"><button className="primary-action" onClick={() => openLesson(nextLesson.id)}>Continuar estudando <span>↗</span></button><button className="text-action" onClick={() => setTab("tracks")}>Ver currículo <span>→</span></button></div>
+                <div className="hero-actions"><button className="primary-action" onClick={() => openLesson(nextLesson.id)}>Continuar estudando <span>↗</span></button><button className="text-action" onClick={() => setTab("applications")}>Explorar aplicações <span>→</span></button></div>
                 <div className="hero-meta"><span><b>08</b> TRILHAS</span><span><b>{totalLessons}</b> AULAS</span><span><b>30-60</b> MIN / DIA</span></div>
               </div>
               <div className="hero-visual" aria-label="Diagrama do fluxo entre dados, inteligência artificial e decisão de engenharia">
@@ -292,13 +293,13 @@ function AILab() {
               <div className="application-filters">{applicationGroups.map((group) => <button key={group} className={applicationGroup === group ? "selected" : ""} onClick={() => setApplicationGroup(group)}>{group}</button>)}</div>
             </div>
             <div className="application-grid">
-              {applicationDomains.filter((domain) => (applicationGroup === "Todas" || domain.group === applicationGroup) && `${domain.name} ${domain.summary} ${domain.useCases.join(" ")} ${domain.group}`.toLowerCase().includes(applicationSearch.toLowerCase())).map((domain) => (
+              {filteredApplications.map((domain) => (
                 <button key={domain.id} className={`application-card ${selectedApplicationId === domain.id ? "selected" : ""}`} onClick={() => setSelectedApplicationId(domain.id)}>
                   <span className="application-card-group">{domain.group}</span><strong>{domain.name}</strong><p>{domain.summary}</p><span className="application-card-link">Explorar aplicações ↗</span>
                 </button>
               ))}
             </div>
-            {(() => { const domain = applicationDomains.find((item) => item.id === selectedApplicationId); return domain ? (
+            {(() => { const domain = filteredApplications.find((item) => item.id === selectedApplicationId) ?? filteredApplications[0]; return domain ? (
               <article className="application-detail">
                 <div className="application-detail-head"><div><span className="section-kicker">DOS CONCEITOS À PRÁTICA · {domain.group.toUpperCase()}</span><h2>{domain.name}</h2><p>{domain.summary}</p></div><span className="application-count">{domain.useCases.length} frentes de aplicação</span></div>
                 <div className="application-detail-grid">
