@@ -19,12 +19,12 @@ type AppMeta = {
 
 const appMeta = appMetaJson as AppMeta;
 const DEFAULT_TITLE = "AI LAB | Academia de Inteligência Artificial";
-const DEFAULT_DESCRIPTION = "Uma formação prática em inteligência artificial aplicada à engenharia mecânica, manutenção e produção.";
+const DEFAULT_DESCRIPTION = "Uma academia multidisciplinar para compreender, desenvolver, avaliar e aplicar inteligência artificial em ciência, engenharia, negócios, saúde, educação e cultura.";
 
 function buildHead(meta: AppMeta) {
   const title = meta.og_title || DEFAULT_TITLE;
   const description = meta.og_description || DEFAULT_DESCRIPTION;
-  const image = meta.og_image_url || "https://ai-lab-academia.higgsfield.app/og.png";
+  const image = meta.og_image_url || "/og.png";
   const favicon = meta.favicon_url || "/favicon.svg";
   return {
     meta: [
@@ -36,7 +36,6 @@ function buildHead(meta: AppMeta) {
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "default" },
       { name: "apple-mobile-web-app-title", content: "AI LAB" },
-      { property: "og:url", content: "https://ai-lab-academia.higgsfield.app/" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
