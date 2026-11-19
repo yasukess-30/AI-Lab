@@ -58,6 +58,8 @@ AI-Lab/
 
 - [Fluxo de branches, commits e Pull Requests](docs/DEVELOPMENT_WORKFLOW.md)
 - [Organização dos diretórios e responsabilidades](docs/PROJECT_STRUCTURE.md)
+- [Laboratórios executáveis e percurso de projetos](docs/LEARNING_LABS_AND_PROJECT_PATH.md)
+- [Pesquisa de hospedagem, banco de dados e servidor local](docs/HOSTING_DATABASE_AND_LOCAL_SERVER.md)
 - [Modelo de Pull Request](.github/PULL_REQUEST_TEMPLATE.md)
 
 As novas etapas devem ser desenvolvidas em branches descritivas, validadas por CI e integradas por Pull Request. A branch `main` deve permanecer como referência estável do projeto.
