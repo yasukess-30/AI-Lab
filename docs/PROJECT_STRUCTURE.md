@@ -13,6 +13,7 @@ AI-Lab/
 │   ├── src/
 │   │   ├── assets/            # Recursos importados e processados pelo bundler
 │   │   ├── components/        # Componentes de interface compartilhados
+│   │   │   └── RunnableLab.tsx # Editor e executor isolado dos laboratórios
 │   │   ├── data/              # Conteúdo educacional estruturado
 │   │   ├── hooks/             # Hooks React reutilizáveis
 │   │   ├── layouts/           # Estruturas de composição visual
@@ -33,7 +34,8 @@ AI-Lab/
 | --- | --- |
 | `curriculum.ts` | Estrutura principal das trilhas, aulas, projetos e avaliações. |
 | `lesson-depth.ts` | Complementos pedagógicos associados às aulas. |
-| `lesson-guides.ts` | Guias aprofundados e laboratórios das aulas. |
+| `lesson-guides.ts` | Guias aprofundados e roteiros pedagógicos. |
+| `lesson-labs.ts` | Laboratórios executáveis, dados sintéticos e desafios por aula. |
 | `application-domains.ts` | Catálogo de setores e aplicações multidisciplinares. |
 | `learning-resources.ts` | Referências técnicas, científicas e materiais de estudo. |
 
