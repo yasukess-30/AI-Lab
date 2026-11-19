@@ -5,7 +5,7 @@ const QUANTA_ICONS_SHIM = fileURLToPath(new URL('../../src/lib/quanta-material-i
 
 export default defineConfig({
   resolve: {
-    alias: [{ find: /^@higgsfield-ai\\/icons(\\/.*)?$/, replacement: QUANTA_ICONS_SHIM }],
+    alias: [{ find: /^@higgsfield-ai\/icons(\/.*)?$/, replacement: QUANTA_ICONS_SHIM }],
   },
   test: {
     projects: [
