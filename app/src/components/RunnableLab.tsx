@@ -26,7 +26,6 @@ function buildSandboxDocument(code: string): string {
     if (typeof value === "string") return value;
     try { return JSON.stringify(value, null, 2); } catch { return String(value); }
   };
-  const originalLog = console.log.bind(console);
   console.log = (...values) => {
     lines.push(values.map(format).join(" "));
     output.textContent = lines.join("\\n");
@@ -52,7 +51,7 @@ export function RunnableLab({ lab }: { lab: LessonLab }) {
   const documentHtml = useMemo(() => executedCode !== null ? buildSandboxDocument(executedCode) : "", [executedCode]);
 
   function downloadDataset() {
-    const blob = new Blob([lab.datasetCsv + "\\n"], { type: "text/csv;charset=utf-8" });
+    const blob = new Blob([lab.datasetCsv + String.fromCharCode(10)], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const anchor = window.document.createElement("a");
     anchor.href = url;
